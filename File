@@ -1,13 +1,22 @@
- Volume in drive C has no label.
- Volume Serial Number is FCF8-E4BA
+<?xml version="1.0" encoding="UTF-8"?>
 
- Directory of C:\Users\User\Desktop\JavaProg
-
-01/19/2020  09:42 PM    <DIR>          .
-01/19/2020  09:42 PM    <DIR>          ..
-01/19/2020  09:42 PM                 0 File
-01/19/2020  08:04 PM                32 README.md
-01/19/2020  08:04 PM               692 TestProg.class
-01/19/2020  08:04 PM               149 TestProg.java
-               4 File(s)            873 bytes
-               2 Dir(s)  67,097,804,800 bytes free
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+                      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  
+  <persistence-unit name="myApp" transaction-type="RESOURCE_LOCAL">
+   <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+      <property name="javax.persistence.jdbc.url"    value="jdbc:h2:mem:test" />
+      <property name="javax.persistence.jdbc.user" value="sa" />
+      <property name="javax.persistence.jdbc.password" value="" />
+      
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+      <property name="show_sql" value="true"/>
+      <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>
